@@ -2,13 +2,13 @@
 
 CHIP-8 (and S-CHIP) emulator by [0xC0DE](https://twitter.com/0xC0DE6502) for the Acorn Electron.
 
-Download and use for free. Please donate to support me: [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/S6S33YYQ7)
+Download and use for free. Please [donate](https://ko-fi.com/S6S33YYQ7) to support me: [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/S6S33YYQ7)
 
 ![CHIP-8 emulator - Loading screen](https://github.com/0xC0DE6502/CHIP-8-releases/blob/main/res/screenshot1.png?raw=true)
 
 ## Prerequisites
 
-The CHIP-8 emulator works on an Acorn Electron, real or emulated. You need DFS or MMFS with `PAGE` at `&E00` to run the emulator. 
+The CHIP-8 emulator works on an Acorn Electron, real or emulated. You need DFS or MMFS with `PAGE` at &E00 to run the emulator. 
 
 ## Quickstart
 
@@ -45,7 +45,7 @@ A games disk consists of 4 parts:
 1. The 3 core emulator files: `!BOOT`, `SCREEN` and `CHIP-8`
 2. A maximum of 13 CHIP-8 ROMs in the `C` directory
 3. A maximum of 13 S-CHIP ROMs in the `S` directory
-4. Optional configuration files in the `Q` directory
+4. Optional [configuration files](#configuration-files) in the `Q` directory
 
 Note that a DFS disk is limited to 31 files in total.
 
@@ -56,7 +56,7 @@ Follow these 4 steps to add a game to a games disk:
 1. Start with the default [games disk](https://github.com/0xC0DE6502/CHIP-8-releases/raw/main/CHIP-8.ssd)
 2. Find and download a CHIP-8 or S-CHIP game ROM, e.g. `myfavouritegame.rom`
 3. Copy it to the games disk using a correct DFS filename, e.g. `C.MYGAME` for a CHIP-8 game, and `S.MYGAME` for an S-CHIP game
-4. Optionally, create and add a configuration file, e.g. `Q.MYGAME`
+4. Optionally, create and add a [configuration file](#configuration-files), e.g. `Q.MYGAME`
 
 ## Playing a game
 
@@ -92,17 +92,17 @@ Other keys:
 
 Games may sometimes need specific configuration. Or you may want to slow down or speed up a particular game. Use the following keys for that:
 
-`SHIFT`+`1`..`8` - Toggle configuration options (quirks)  
+`SHIFT`+`1`..`8` - Toggle configuration options ([quirks](#quirks))  
 `UP` - Increase emulator speed  
 `DOWN` - Decrease emulator speed  
 
-Quirks and other game information, like emulator speed and ROM name, can be shown or hidden by pressing the `COPY` key, e.g. in the S-CHIP game Blinky:
+[Quirks](#quirks) and other game information, like emulator speed and ROM name, can be shown or hidden by pressing the `COPY` key, e.g. in the S-CHIP game Blinky:
 
 ![CHIP-8 emulator - Showing game information while playing Blinky](https://github.com/0xC0DE6502/CHIP-8-releases/blob/main/res/screenshot4.png?raw=true)
 
 ## Quirks
 
-Most games work with the default emulator settings. But some games need to have specific configuration options (quirks) enabled or disabled to work properly. The emulator supports 8 quirks which can be toggled during gameplay (press keys `SHIFT`+`1`..`8`). They can also be set permanently in an optional configuration file for each game. 
+Most games work with the default emulator settings. But some games need to have specific configuration options (quirks) enabled or disabled to work properly. The emulator supports 8 quirks which can be toggled during gameplay (press keys `SHIFT`+`1`..`8`). They can also be set permanently in an optional [configuration file](#configuration-files) for each game. 
 
 The 8 quirks are:
 1. **`CZ`** - When enabled, the **C**arry flag is set to **Z**ero after `AND`/`OR`/`XOR` instructions
