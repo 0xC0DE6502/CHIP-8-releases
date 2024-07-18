@@ -42,7 +42,7 @@ A typical CHIP-8 emulator games disk looks like this:
 
 A games disk consists of 4 parts:
 
-1. The 3 core emulator files: `!BOOT`, `SCREEN` and `CHIP-8`
+1. The 4 core emulator files: `!BOOT`, `SCREEN`, `CHIP-8` and `README`
 2. A maximum of 13 CHIP-8 ROMs in the `C` directory
 3. A maximum of 13 S-CHIP ROMs in the `S` directory
 4. Optional [configuration files](#configuration-files) in the `Q` directory
@@ -92,7 +92,7 @@ Other keys:
 
 Games may sometimes need specific configuration. Or you may want to slow down or speed up a particular game. Use the following keys for that:
 
-`SHIFT`+`1`..`8` - Toggle configuration options ([quirks](#quirks))  
+`SHIFT`+`1`..`7` - Toggle configuration options ([quirks](#quirks))  
 `UP` - Increase emulator speed  
 `DOWN` - Decrease emulator speed  
 
@@ -102,9 +102,9 @@ Games may sometimes need specific configuration. Or you may want to slow down or
 
 ## Quirks
 
-Most games work with the default emulator settings. But some games need to have specific configuration options (quirks) enabled or disabled to work properly. The emulator supports 8 quirks which can be toggled during gameplay (press keys `SHIFT`+`1`..`8`). They can also be set permanently in an optional [configuration file](#configuration-files) for each game. 
+Most games work with the default emulator settings. But some games need to have specific configuration options (quirks) enabled or disabled to work properly. The emulator supports 7 quirks which can be toggled during gameplay (press keys `SHIFT`+`1`..`7`). They can also be set permanently in an optional [configuration file](#configuration-files) for each game. 
 
-The 8 quirks are:
+The 7 quirks are:
 1. **`CZ`** - When enabled, the **C**arry flag is set to **Z**ero after `AND`/`OR`/`XOR` instructions
 2. **`II`** - When enabled, the **I**-register is **I**ncremented after certain instructions
 3. **`VS`** - When enabled, wait for **V**ertical **S**ync before drawing each sprite
@@ -112,7 +112,6 @@ The 8 quirks are:
 5. **`SH`** - When enabled, the bit**SH**ift instructions `SHL`/`SHR` operate on different registers
 6. **`JV`** - When enabled, the **J**ump instruction uses the **V**0-register
 7. **`LE`** - When enabled, the S-CHIP mode switches to **LE**gacy instead of Modern style
-8. **`CI`** - When enabled, the **C**arry flag is set when the **I**-register 'overflows'
 
 ## Configuration files
 
@@ -135,7 +134,7 @@ This instructs the emulator to toggle the `II`, `SH` and `JV` quirks (in relatio
 
 Here are the valid commands in a configuration file:
 
-`CZ`, `II`, `VS`, `CL`, `SH`, `JV`, `LE`, `CI` - Toggle this specific quirk (in relation to its default setting)  
+`CZ`, `II`, `VS`, `CL`, `SH`, `JV`, `LE` - Toggle this specific quirk (in relation to its default setting)  
 `SNN` - Set emulator speed to &NN (&00..&C8, i.e. 0..200)  
 `BN` - Set background colour of gameplay area to N (0..7), default is black (0)  
 `FN` - Set foreground colour of gameplay area to N (0..7), default is white (7)  
